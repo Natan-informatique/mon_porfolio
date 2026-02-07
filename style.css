@@ -486,4 +486,54 @@ backToTop {
     border-radius: 6px;
     cursor: pointer;
 }
-✅ 4️⃣ Script de vérifica
+/* Styles pour smartphone */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    .menu a {
+        margin: 10px 0;
+        font-size: 16px;
+    }
+
+    .services-container,
+    .certifications-container,
+    .testimonials-container,
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card,
+    .cert-card,
+    .testimonial-card,
+    .project-card {
+        width: 90%;
+    }
+
+    #home p {
+        font-size: 16px;
+    }
+
+    #backToTop {
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 12px;
+    }
+}
+
+
+
