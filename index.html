@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio - Natanael</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<a href="https://wa.me/225 49 65 57 24" class="whatsapp-btn" target="_blank">
+    💬
+</a>
+<script>
+const counters = document.querySelectorAll('.counter');
+
+counters.forEach(counter => {
+    counter.innerText = '0';
+    const updateCounter = () => {
+        const target = +counter.getAttribute('data-target');
+        const current = +counter.innerText;
+        const increment = target / 100; // vitesse
+
+        if(current < target){
+            counter.innerText = Math.ceil(current + increment);
+            setTimeout(updateCounter, 20);
+        } else {
+            counter.innerText = target;
+        }
+    };
+
+    // Lancer l’animation quand visible
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                updateCounter();
+                observer.unobserve(counter);
+            }
+        });
+    }, { threshold: 0.6 });
+
+    observer.observe(counter);
+});
+</script>
+<button id="backToTop">↑</button>
+<script>
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+        backToTop.style.display = "block";
+    } else {
+        backToTop.style.display = "none";
+    }
+});
+
+backToTop.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+</script>
+<body>
+    <nav class="navbar">
+    <div class="logo">Natanael</div>
+
+    <div class="menu">
+        <a href="#home">Accueil</a>
+        <a href="#about">À propos</a>
+        <a href="#skills">Compétences</a>
+        <a href="#projects">Projets</a>
+        <a href="#contact">Contact</a>
+        <a href="#stats">Statistiques</a>
+        <a href="#testimonials">Témoignages</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+        <a href="CV_Natanael.pdf" download>CV</a>
+    </div>
+</nav>
+    <nav class="navbar">
+    <div class="logo">Natanael</div>
+
+    <div class="menu">
+        <a href="#home">Accueil</a>
+        <a href="#about">À propos</a>
+        <a href="#skills">Compétences</a>
+        <a href="#projects">Projets</a>
+        <a href="#contact">Contact</a>
+        <a href="CV_Natanael.pdf" download>CV</a>
+    </div>
+</nav>
+
+<header>
+    <h1>Natanael Kouassi</h1>
+    <p>Développeur Web & Étudiant en Génie Logiciel</p>
+</header>
+
+<nav>
+    
+</nav>
+<section id="home" class="home" class="reveal">
+    <div class="home-container">
+
+        <div class="home-image">
+            <img src="www.jpg" alt="Photo de Natanael">
+        </div>
+
+        <div class="home-content" class="reveal">
+            <h1>Natanael Kouassi</h1>
+            <h2>Étudiant en Génie Logiciel & Développeur Web Junior</h2>
+
+            <p>
+                Passionné par l’informatique et les technologies numériques,
+                je développe progressivement des compétences dans la création
+                de sites web et d’applications modernes afin de devenir un
+                futur ingénieur capable de concevoir des solutions innovantes.
+            </p>
+
+            <a href="#projects" class="home-btn">Voir mes projets</a>
+        </div>
+
+    </div>
+</section>
+
+
+<section id="about" class="reveal">
+    <h2>À propos de moi</h2>
+    <p>
+        Je suis un étudiant dynamique et motivé, engagé dans un parcours en Génie Logiciel.
+
+Depuis mes débuts dans le domaine informatique, je m’intéresse particulièrement à la conception de sites web, aux applications numériques et aux nouvelles technologies capables d'améliorer le quotidien.
+
+Je cherche constamment à développer mes compétences techniques et professionnelles en réalisant des projets concrets et en explorant de nouvelles solutions numériques.
+    </p>
+</section>
+
+<section id="skills" class="reveal">
+    <h2>Mes compétences</h2>
+    <ul>
+        <li>HTML / CSS</li>
+        <li>JavaScript</li>
+        <li>Création de sites web</li>
+        <li>GitHub & Déploiement</li>
+        <li>Développement d’applications</li>
+    </ul>
+</section>
+<section id="cv" class="reveal">
+    <h2>Mon CV</h2>
+    <p>
+        Vous pouvez télécharger mon CV pour consulter mon parcours académique, mes compétences et mes projets réalisés.
+    </p>
+    <a href="CV_Natanael.pdf" download class="cv-btn">Télécharger le CV</a>
+</section>
+<section id="projects" class="reveal">
+    <h2>Mes Projets</h2>
+    <div class="projects-container">
+
+        <div class="project-card">
+            <h3>SOTRA Mon Soutrali</h3>
+            <p>
+                Application destinée à faciliter l'utilisation des transports urbains SOTRA en Côte d’Ivoire. 
+                L'application permet de consulter les horaires, suivre les bus en temps réel et planifier son trajet.
+            </p>
+            <ul>
+                <li><strong>Technologies :</strong> HTML, CSS, JavaScript, API SOTRA</li>
+                <li><strong>Fonctionnalités :</strong> Horaires en temps réel, calcul d’itinéraires, alertes trafic</li>
+                <li><strong>Objectif :</strong> Améliorer le transport urbain et la vie quotidienne des usagers</li>
+            </ul>
+            <a href="#" class="project-btn">Voir le projet</a>
+        </div>
+
+        <div class="project-card">
+            <h3>Site étudiant Natanael UE</h3>
+            <p>
+                Site web académique conçu pour les étudiants afin de centraliser les informations importantes 
+                (cours, emploi du temps, annonces). Il améliore la communication entre étudiants et enseignants.
+            </p>
+            <ul>
+                <li><strong>Technologies :</strong> HTML, CSS, JavaScript</li>
+                <li><strong>Fonctionnalités :</strong> Informations en temps réel, formulaire de contact, calendrier</li>
+                <li><strong>Objectif :</strong> Faciliter l'accès aux informations pour tous les étudiants</li>
+            </ul>
+            <a href="#" class="project-btn">Voir le projet</a>
+        </div>
+
+        <div class="project-card">
+            <h3>Portfolio Personnel</h3>
+            <p>
+                Mon portfolio personnel, conçu pour présenter mes compétences, mes projets et mon parcours académique. 
+                Il reflète mon savoir-faire en développement web et design.
+            </p>
+            <ul>
+                <li><strong>Technologies :</strong> HTML, CSS, JavaScript</li>
+                <li><strong>Fonctionnalités :</strong> Sections animées au scroll, menu fixe, bouton WhatsApp</li>
+                <li><strong>Objectif :</strong> Présenter mes compétences et attirer des opportunités professionnelles</li>
+            </ul>
+            <a href="#" class="project-btn">Voir le projet</a>
+        </div>
+
+    </div>
+    section id="services" class="reveal">
+    <h2>Mes Services</h2>
+
+    <div class="services-container">
+
+        <div class="service-card">
+            <h3>🌐 Création de sites web</h3>
+            <p>
+                Conception de sites web modernes, responsives et rapides
+                pour étudiants, entreprises et particuliers.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <h3>📱 Applications web</h3>
+            <p>
+                Développement d'applications web interactives adaptées
+                aux besoins des utilisateurs.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <h3>🛠 Maintenance & amélioration</h3>
+            <p>
+                Correction de bugs, amélioration de sites existants
+                et optimisation des performances.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+</section>
+<section id="stats" class="reveal stats">
+    <h2>Mes Statistiques</h2>
+    <div class="stats-container">
+
+        <div class="stat-card">
+            <h3 class="counter" data-target="3">0</h3>
+            <p>Projets réalisés</p>
+        </div>
+
+        <div class="stat-card">
+            <h3 class="counter" data-target="5">0</h3>
+            <p>Compétences acquises</p>
+        </div>
+        <section id="testimonials" class="reveal">
+    <h2>Témoignages</h2>
+    <div class="testimonials-container">
+
+        <div class="testimonial-card">
+            <p>"Natanael est très motivé et passionné par le développement web. Ses projets sont toujours bien réalisés et innovants."</p>
+            <h4>— Professeur / Mentor</h4>
+        </div>
+
+        <div class="testimonial-card">
+            <p>"J'ai travaillé avec Natanael sur un projet étudiant et il a fait preuve d'une grande organisation et de créativité."</p>
+            <h4>— Camarade de classe</h4>
+        </div>
+
+    </div>
+</section>
+<section id="certifications" class="reveal">
+    <h2>Certifications</h2>
+    <div class="certifications-container">
+         <img src="certificat1.jpg"
+
+
+        <div class="cert-card">
+            <h3>HTML & CSS - Codecademy</h3>
+            <p>Formation en ligne complétée avec succès sur le développement web front-end.</p>
+        </div>
+
+        <div class="cert-card">
+            <h3>JavaScript - FreeCodeCamp</h3>
+            <p>Apprentissage pratique de JavaScript pour créer des sites web interactifs.</p>
+        </div>
+
+        <div class="cert-card">
+            <h3>Git & GitHub - Udemy</h3>
+            <p>Maîtrise des bases de Git et GitHub pour la gestion de projets collaboratifs.</p>
+        </div>
+
+    </div>
+</section>
+
+        <div class="stat-card">
+            <h3 class="counter" data-target="1">0</h3>
+            <p>Formation en cours (Licence 1)</p>
+        </div>
+
+        <div class="stat-card">
+            <h3 class="counter" data-target="2">0</h3>
+            <p>Collaborations / Projets</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="contact" class="reveal">
+    <h2>Contact</h2>
+    <p>Email : nathanaelkouassi807@gmail.com</p>
+    <p>WhatsApp : +225 07 49 65 57 24</p>
+</section>
+
+<footer>
+    <p>© 2026 Natanael - Portfolio personnel</p>
+</footer>
+<script>
+function revealOnScroll() {
+    const reveals = document.querySelectorAll(".reveal");
+
+    reveals.forEach(section => {
+        const windowHeight = window.innerHeight;
+        const revealTop = section.getBoundingClientRect().top;
+        const revealPoint = 100;
+
+        if (revealTop < windowHeight - revealPoint) {
+            section.classList.add("active");
+        }
+    });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+</script>
+
+</body>
+</html>
